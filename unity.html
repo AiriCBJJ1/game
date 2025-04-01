@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unity 製作說明</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .content-box {
+      max-width: 960px;
+      margin: 2em auto;
+      padding: 2em;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ff9940;
+      line-height: 1.8;
+    }
+    .content-box h2 {
+      color: #00ff99;
+      margin-top: 1.8em;
+    }
+    .content-box p, .content-box ul {
+      text-align: justify;
+    }
+    .content-box img {
+      max-width: 100%;
+      margin: 1em 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ff9940;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">目的與動機</a></li>
+        <li><a href="method.html">研究方法</a></li>
+        <li><a href="game.html">遊戲介紹</a></li>
+        <li><a href="chatbot.html">聊天機器人</a></li>
+        <li><a href="vision.html">影像辨識</a></li>
+        <li><a href="unity.html">Unity 製作說明</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Unity 製作說明</h1>
+    <p>從構思到實作，帶你了解我們如何用 Unity 打造這款遊戲</p>
+  </section>
+
+  <section class="content-box">
+    <h2>開發流程簡介</h2>
+    <p>本遊戲由 Unity 引擎打造，採用 2D 與 3D 混合製作，並結合聊天機器人與影像辨識系統，實現互動性與沉浸感兼具的遊戲體驗。</p>
+
+    <h2>使用工具與插件</h2>
+    <ul>
+      <li>Unity 2022 LTS</li>
+      <li>Standalone File Browser（圖片檔案選取）</li>
+      <li>VRoid Studio（角色建模）</li>
+      <li>Mixamo（動畫綁定與動作捕捉）</li>
+      <li>PixAI、Suno（圖像與音樂）</li>
+    </ul>
+
+    <h2>重要系統實作</h2>
+    <p><strong>血條系統：</strong> 透過 Singleton 模式搭配 <code>DontDestroyOnLoad</code> 實作，確保切換場景時血條資訊不會遺失。</p>
+    <p><strong>圖片選取功能：</strong> 使用 SFB 套件實現 Windows 平台開啟檔案總管，只允許選擇 .jpg 圖片進行辨識。</p>
+
+    <h2>Unity 編輯介面展示</h2>
+    <p>（請放圖）可展示 Scene 視圖、UI 設計、角色動畫節點或 C# 腳本區塊等開發過程畫面。</p>
+    <img src="images/game/unity-example.jpg" alt="Unity 編輯器示意圖">
+  </section>
+
+</body>
+</html>

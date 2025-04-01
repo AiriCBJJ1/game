@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .story-box {
-      max-width: 800px;
+      max-width: 960px;
       margin: 2em auto;
       padding: 2em;
       background-color: #1a1a1a;
@@ -15,14 +15,18 @@
       box-shadow: 0 0 15px #00ff9940;
       line-height: 1.8;
     }
-
     .story-box h2 {
       color: #00ff99;
-      margin-bottom: 1em;
+      margin-top: 1.8em;
     }
-
-    .story-box p {
+    .story-box p, .story-box ul {
       text-align: justify;
+    }
+    .story-box img {
+      max-width: 100%;
+      margin: 1em 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ff9940;
     }
   </style>
 </head>
@@ -35,28 +39,49 @@
         <li><a href="game.html">遊戲介紹</a></li>
         <li><a href="chatbot.html">聊天機器人</a></li>
         <li><a href="vision.html">影像辨識</a></li>
+        <li><a href="unity.html">Unity 製作說明</a></li>
       </ul>
     </nav>
   </header>
 
   <section class="hero">
     <h1>遊戲介紹</h1>
-    <p>沉浸於神秘異界，解謎與抉擇之旅即將展開</p>
+    <p>沉浸於神秘靜界，解謎與抉擇之旅即將展開</p>
   </section>
 
   <section class="story-box">
-    <h2>劇情概要</h2>
-    <p>
-      玩家意外撿到一支詭異的手機，螢幕閃爍後，他發現自己被傳送到一個名為「靜界」的異世界。
-      這裡瀰漫著詭異的寂靜，時間彷彿停滯，唯有散落的靈石碎片與殘存的神靈低語透露著這世界的秘密。
-      玩家得知，若想返回原本的世界，必須集齊三塊靈石碎片並解開通往「神界」的大門封印。
-    </p>
-    <p>
-      在旅途中，玩家將穿梭於各個區域，解開謎題且與神靈交流。
-      他們的話語時而指引，時而試探，甚至誘使玩家做出艱難抉擇。
-      隨著探索深入，玩家將發現這個世界的真正由來，以及自己與靜界之間的神秘聯繫……
-    </p>
-  </section>
+    <h2>主題與類型</h2>
+    <p><strong>主題：</strong>靜界碎片之謎<br>
+       <strong>遊玩類型：</strong>解謎<br>
+       <strong>作業系統：</strong>Windows</p>
 
+    <h2>劇情簡介</h2>
+    <p>一名少女陰錯陽差來到異世界「靜界」。為了返回原來的世界，她必須解開神靈提出的問題，集齊三塊靈石碎片，才能開啟通往神界的大門……</p>
+    <img src="images/game/遊戲主頁.jpg" alt="遊戲主選單畫面">
+
+    <h2>特色系統</h2>
+    <ul>
+      <li><strong>聊天機器人（修女）</strong>：透過 Ollama 模型訓練而成，提供另類互動方式。</li>
+      <li><strong>影像辨識系統</strong>：使用圖片選取方式，搭配 Windows 平台進行解謎。</li>
+    </ul>
+    <img src="images/game/LINE_ALBUM_game素材區_250402_6.jpg" alt="修女對話展示">
+    <img src="images/game/LINE_ALBUM_game素材區_250402_11.jpg" alt="選擇辨識任務畫面">
+
+    <h2>遊戲畫面展示</h2>
+    <li><strong>遊戲以 2D & 3D 混合方式製作，搭配章節導向的解謎冒險流程與分支對話系統。</li>
+    <img src="images/game/LINE_ALBUM_game素材區_250402_1.jpg" alt="章節選擇畫面">
+    <img src="images/game/LINE_ALBUM_game素材區_250402_3.jpg" alt="遊戲事件畫面：少女驚訝">
+    <img src="images/game/LINE_ALBUM_game素材區_250402_5.jpg" alt="遊戲問答互動場景">
+    <img src="images/game/LINE_ALBUM_game素材區_250402_9.jpg" alt="辨識錯誤提示畫面">
+
+    <h2>開發技術與工具</h2>
+    <ul>
+      <li><strong>開發引擎：</strong>Unity</li>
+      <li><strong>3D建模工具：</strong>Blender、VRoid Studio</li>
+      <li><strong>開發語言：</strong>Python（AI 功能）、C#（遊戲核心）</li>
+      <li><strong>動作捕捉：</strong>Mixamo</li>
+      <li><strong>音樂製作：</strong>Suno</li>
+      <li><strong>2D圖像製作：</strong>PixAI</li>
+    </ul>
 </body>
 </html>
