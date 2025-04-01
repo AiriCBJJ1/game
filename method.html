@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>研究方法與步驟</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2em 1em;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #00ff99;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .timeline-step {
+      padding: 1em;
+      position: relative;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      width: 45%;
+      margin: 1em 0;
+      box-shadow: 0 0 10px #00ff9960;
+    }
+
+    .timeline-step.left {
+      left: 0;
+    }
+
+    .timeline-step.right {
+      left: 55%;
+    }
+
+    .timeline-step::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #00ff99;
+      border: 3px solid #0f0f0f;
+      z-index: 1;
+    }
+
+    .timeline-step.left::before {
+      right: -30px;
+    }
+
+    .timeline-step.right::before {
+      left: -30px;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-step, .timeline-step.left, .timeline-step.right {
+        width: 100%;
+        left: 0;
+      }
+
+      .timeline::after {
+        left: 10px;
+      }
+
+      .timeline-step::before {
+        left: -10px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">目的與動機</a></li>
+        <li><a href="method.html">研究方法</a></li>
+        <li><a href="game.html">遊戲介紹</a></li>
+        <li><a href="chatbot.html">聊天機器人</a></li>
+        <li><a href="vision.html">影像辨識</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>研究方法與步驟</h1>
+    <p>從構想到實作，打造邊宇宙的技術歷程</p>
+  </section>
+
+  <section class="timeline">
+    <div class="timeline-step left">
+      <h3>Step 1：主題構想</h3>
+      <p>從校園結合遊戲與AI為出發點，擬定主題「界碎之詠」以虛擬世界帶出互動式學習。</p>
+    </div>
+    <div class="timeline-step right">
+      <h3>Step 2：技術蒐集</h3>
+      <p>調查 Unity 引擎、影像辨識模型（ResNet 等）、對話模型（Naive Bayes）等技術可行性。</p>
+    </div>
+    <div class="timeline-step left">
+      <h3>Step 3：模型建構</h3>
+      <p>實作影像分類模型，處理資料集，並搭配聊天系統的語料整理與訓練。</p>
+    </div>
+    <div class="timeline-step right">
+      <h3>Step 4：系統整合</h3>
+      <p>整合 Unity 場景與 Python 模型，實現從辨識→互動→劇情進展的完整體驗。</p>
+    </div>
+    <div class="timeline-step left">
+      <h3>Step 5：測試與優化</h3>
+      <p>使用校園實景測試影像準確度與對話系統流暢度，逐步調整細節。</p>
+    </div>
+    <div class="timeline-step right">
+      <h3>Step 6：成果展示</h3>
+      <p>將作品包裝為展示型網站，進行初次口試與公開呈現。</p>
+    </div>
+  </section>
+
+</body>
+</html>

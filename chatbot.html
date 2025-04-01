@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聊天機器人</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .chatbot-section {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 2em;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ff9950;
+      line-height: 1.8;
+    }
+    .chatbot-section h2 {
+      color: #00ff99;
+      margin-bottom: 1em;
+    }
+    .chatbot-section p {
+      text-align: justify;
+    }
+    .chatbot-section img {
+      max-width: 100%;
+      margin: 1em 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00ff9940;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">目的與動機</a></li>
+        <li><a href="method.html">研究方法</a></li>
+        <li><a href="game.html">遊戲介紹</a></li>
+        <li><a href="chatbot.html">聊天機器人</a></li>
+        <li><a href="vision.html">影像辨識</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>聊天機器人</h1>
+    <p>修女對話系統與自然語言理解模組</p>
+  </section>
+
+  <section class="chatbot-section">
+    <h2>系統設計概述</h2>
+    <p>
+      在本專題中，聊天系統透過自然語言處理（NLP）技術結合校園場景，讓玩家能夠與虛擬角色——修女進行即時互動。此設計不僅提升了劇情沉浸感，更強化玩家與角色之間的情感連結。
+    </p>
+
+    <h2>模型選擇與訓練方法</h2>
+    <p>
+      聊天系統核心採用 Naive Bayes 模型，因其運算效率高、適合中小型資料訓練，成為我們首選。開發過程中，我們整理大量對話資料，並套用多種文本處理技術，如中文斷詞、停用詞過濾與特徵向量化，以提升模型辨識準確度。資料集以 90% 訓練、10% 測試比例分割，確保系統能穩定輸出適當回應。
+    </p>
+    <p>下圖為模型處理流程示意圖：</p>
+    <img src="images/chatbot/聊天機器人流程圖.png" alt="聊天機器人處理流程圖">
+
+    <h2>資料標註與語料訓練</h2>
+    <p>
+      所有對話樣本皆需搭配正確語意標籤，以利模型訓練分類。下圖為實際對話與意圖分類的示意資料：
+    </p>
+    <img src="images/chatbot/對話書籤提取.png" alt="對話資料標註範例">
+
+    <h2>回應策略與互動設計</h2>
+    <p>
+      為避免出現錯誤或不自然的回覆，我們設計容錯機制：當系統無法理解輸入內容時，將回覆「很抱歉，我不太了解你的意思」，提升互動真實感。
+    </p>
+    <p>
+      以下為修女聊天機器人實際運作之回應範例：
+    </p>
+    <img src="images/chatbot/聊天機器人回應結果.png" alt="聊天輸入與回覆範例">
+
+    <p>
+      未來，我們計劃擴充語料庫並嘗試導入進階 NLP 架構如 Transformer，使修女角色的語境理解與回應流暢度更貼近真實人類對話。
+    </p>
+  </section>
+
+</body>
+</html>
