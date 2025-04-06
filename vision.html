@@ -7,28 +7,25 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .vision-section {
-      max-width: 900px;
+      max-width: 960px;
       margin: 2em auto;
       padding: 2em;
       background-color: #1a1a1a;
       border-radius: 12px;
-      box-shadow: 0 0 15px #00ff9950;
+      box-shadow: 0 0 15px #00ff9940;
       line-height: 1.8;
     }
-    .vision-section h2, .vision-section h3 {
+    .vision-section h2 {
       color: #00ff99;
-      margin-top: 1.5em;
+      margin-top: 1.8em;
     }
-    .vision-section ul {
-      padding-left: 1.2em;
-    }
-    .vision-section p {
+    .vision-section p, .vision-section ul {
       text-align: justify;
     }
     .vision-section img {
       max-width: 100%;
       margin: 1em 0;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 0 10px #00ff9940;
     }
   </style>
@@ -49,52 +46,45 @@
 
   <section class="hero">
     <h1>影像辨識</h1>
-    <p>強化沉浸式體驗的視覺感知技術</p>
   </section>
 
   <section class="vision-section">
-    <h2>資料來源與前處理</h2>
+    <h2>系統設計理念</h2>
     <p>
-      我們以校園五大場景（羅馬劇場、天地之間、夏日、原味大地、鋼琴）為背景蒐集影像資料，考量不同角度與比例，包括 1:1、3:4、9:20 等，並融入早中晚與雨天元素，構建多樣化訓練集與測試集。每類場景包含超過 100 張訓練圖與 50 張測試圖，涵蓋十種角度變化。
+      為提升遊戲的互動性與挑戰性，我們設計了影像辨識任務系統。
+      玩家需於現實場景中拍攝圖片並上傳至遊戲，系統將自動辨識場景是否符合任務需求，推動劇情發展。
     </p>
-    <p>下圖為原始校園場景照片：</p>
-    <img src="images/vision/原始圖.png" alt="原始圖">
+    <img src="images/vision/3 (2).png" alt="影像辨識概念圖">
 
-    <p>為提升模型訓練效率，所有圖片皆壓縮為 80×80 彩色圖像，並統一比例與解析度：</p>
-    <img src="images/vision/經前處理圖.png" alt="經前處理圖">
-
-    <h2>使用模型架構</h2>
+    <h2>資料收集與預處理</h2>
     <p>
-      我們選用 ResNet 為主要影像分類模型，其深度殘差學習架構能有效擷取視覺特徵，結構如下圖所示：
+      資料蒐集自學校五大場景（如羅馬劇場、天地之間等），並加入不同時間（早、中、晚）及天氣條件，增強模型泛化能力。
+      圖片壓縮為 80x80 彩色圖像，訓練過程設置 50 個訓練週期，並定期保存最佳模型。
     </p>
-    <img src="images/vision/模型架構圖.png" alt="模型架構圖">
+    <img src="images/vision/3 (3).png" alt="資料集與預處理圖示">
+    <img src="images/vision/3 (5).png" alt="資料集與預處理圖示">
+    <img src="images/vision/3 (9).png" alt="資料集與預處理圖示">
 
-    <h2>訓練流程摘要</h2>
-    <ul>
-      <li>圖片壓縮為 80x80 彩色圖像</li>
-      <li>限制訓練圈數為 50，並設置存取點記錄 loss 值</li>
-      <li>四種模型進行比較訓練：ResNet、Inception、MobileNet、EfficientNet</li>
-      <li>每模型以 50 張測試圖評估結果</li>
-    </ul>
-
-    <h2>成果分析</h2>
-    <p>下圖為四種模型在訓練期間的 Loss 值變化比較：</p>
-    <img src="images/vision/測試準確率比較圖.png" alt="Loss 比較圖">
-
-    <p>混淆矩陣展示了模型對五類校園場景的分類準確性：</p>
-    <img src="images/vision/測試結果圖.png" alt="混淆矩陣圖">
-
-    <ul>
-      <li>ResNet：準確率 0.90 ✅（最佳）</li>
-      <li>Inception：0.70</li>
-      <li>MobileNet：0.42</li>
-      <li>EfficientNet：0.66</li>
-    </ul>
+    <h2>模型訓練與成果</h2>
     <p>
-      經訓練結果顯示，ResNet 準確率最高，最終我們選擇將 ResNet 作為影像辨識系統的主要架構，提升遊戲互動中的場景判斷與反應準確性。
+      經過多輪測試，我們選擇 ResNet 模型作為最終模型，達成約 90% 的準確率。
+      其他模型如 Inception、MobileNet 與 EfficientNet 分別達到約 0.7、0.42 及 0.66 的準確率。
+      ResNet 模型在穩定性與準確率表現均優於其他模型。
     </p>
+    <img src="images/vision/3 (1).png" alt="模型測試結果比較圖">
+    <img src="images/vision/3 (4).png" alt="模型測試結果比較圖">
+    <img src="images/vision/3 (7).png" alt="模型測試結果比較圖">
+    <img src="images/vision/3 (6).png" alt="模型測試結果比較圖">
+    <img src="images/vision/3 (8).png" alt="模型測試結果比較圖">
+
+    <h2>遊戲流程整合</h2>
+    <p>
+      玩家透過遊戲中的檔案選取功能，上傳現實拍攝的場景圖片。
+      系統經辨識後，若結果符合任務條件，即可推動劇情發展，完成階段挑戰。
+    </p>
+    <img src="images/vision/暫時.png" alt="遊戲中影像辨識流程圖">
+
   </section>
 
 </body>
 </html>
-
